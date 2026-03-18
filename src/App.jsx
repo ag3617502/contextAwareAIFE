@@ -368,7 +368,7 @@ function AppContent() {
         conversations={conversations}
         currentId={id}
         onNewChat={() => {
-          navigate("/contextAwareAIFE/");
+          navigate("/contextAwareAIFE");
           if (window.innerWidth <= 1024) setIsSidebarOpen(false);
         }}
         onLogout={handleLogout}
