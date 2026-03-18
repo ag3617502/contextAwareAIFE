@@ -24,7 +24,7 @@ function Auth({ setUser }) {
     
     try {
       // Sending credentials to our new modular backend auth routes
-      const res = await fetch(`https://context-aware-aibe.vercel.app/api/auth/${endpoint}`, {
+      const res = await fetch(`https://context-aware-aibe-s8qw.vercel.app/api/auth/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -154,7 +154,7 @@ function ChatView({ user, fetchConversations, messages, setMessages, input, setI
     try {
       // Adding Authorization header with JWT token
       const res = await fetch(
-        `https://context-aware-aibe.vercel.app/api/chat/conversations/${convId}/messages?limit=20&offset=0`,
+        `https://context-aware-aibe-s8qw.vercel.app/api/chat/conversations/${convId}/messages?limit=20&offset=0`,
         {
           headers: { Authorization: `Bearer ${user.token}` },
         },
@@ -171,7 +171,7 @@ function ChatView({ user, fetchConversations, messages, setMessages, input, setI
   const loadMoreMessages = async () => {
     if (!id || !hasMore) return;
     try {
-      const res = await fetch(`https://context-aware-aibe.vercel.app/api/chat/conversations/${id}/messages?limit=20&offset=${offset}`, {
+      const res = await fetch(`https://context-aware-aibe-s8qw.vercel.app/api/chat/conversations/${id}/messages?limit=20&offset=${offset}`, {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       const data = await res.json();
@@ -201,7 +201,7 @@ function ChatView({ user, fetchConversations, messages, setMessages, input, setI
 
     try {
       // API call with authenticated context
-      const res = await fetch('https://context-aware-aibe.vercel.app/api/chat', {
+      const res = await fetch('https://context-aware-aibe-s8qw.vercel.app/api/chat', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -328,7 +328,7 @@ function AppContent() {
     if (!user) return;
     try {
       // Authenticated request to list conversations
-      const res = await fetch('https://context-aware-aibe.vercel.app/api/chat/conversations', {
+      const res = await fetch('https://context-aware-aibe-s8qw.vercel.app/api/chat/conversations', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       const data = await res.json();
