@@ -360,17 +360,17 @@ function AppContent() {
 
   return (
     <div className="app-container">
-      <div 
-        className={`sidebar-overlay ${isSidebarOpen ? 'visible' : ''}`} 
-        onClick={() => setIsSidebarOpen(false)} 
+      <div
+        className={`sidebar-overlay ${isSidebarOpen ? "visible" : ""}`}
+        onClick={() => setIsSidebarOpen(false)}
       />
-      <Sidebar 
-        conversations={conversations} 
-        currentId={id} 
+      <Sidebar
+        conversations={conversations}
+        currentId={id}
         onNewChat={() => {
-          navigate('/');
+          navigate("/");
           if (window.innerWidth <= 1024) setIsSidebarOpen(false);
-        }} 
+        }}
         onLogout={handleLogout}
         userEmail={user.email}
         isOpen={isSidebarOpen}
@@ -379,7 +379,10 @@ function AppContent() {
         }}
       />
       <Routes>
-        <Route path="/" element={<ChatView {...chatProps} />} />
+        <Route
+          path="/contextAwareAIFE/"
+          element={<ChatView {...chatProps} />}
+        />
         <Route path="/chat/:id" element={<ChatView {...chatProps} />} />
         {/* Redirect any other route back to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
