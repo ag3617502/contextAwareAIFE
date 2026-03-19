@@ -18,13 +18,13 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
 .app-container {
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
 }
 
@@ -271,7 +271,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--bg-primary);
 }
 
@@ -496,7 +496,7 @@ body {
 @media (max-width: 1024px) {
   .sidebar {
     position: absolute;
-    height: 100vh;
+    height: 100dvh;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
   }
   .sidebar-overlay.visible {
@@ -527,10 +527,13 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
+    margin: 0;
   }
   .chat-header {
     padding: 0.8rem 1rem;
     gap: 0.5rem;
+    width: 100%;
   }
   .chat-messages {
     padding: 1rem;
